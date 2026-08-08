@@ -25,6 +25,8 @@ body {
 img, picture, video, canvas, svg {
   display: block;
   max-width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 input, button, textarea, select {
@@ -132,4 +134,37 @@ h1, h2, h3, h4, h5, h6 {
   width: 80px;
   border-radius: 10px;
 }
+
+.sidebar {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: max-content max-content max-content;
+  gap: 75px;
+  padding-top: 25px;
+  padding-left: 20px;
+}
+
+.sidebar .dashboard {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  gap: 20px;
+}
+
+.sidebar .dashboard span {
+  align-self: center;
+}
+
+
+.sidebar div {
+  display: grid;
+  gap: 20px;
+}
+
+
+.sidebar div div{
+  display: grid;
+  grid-template-columns: max-content max-content;
+  gap: 20px;
+}
+
 
