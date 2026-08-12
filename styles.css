@@ -48,15 +48,23 @@ h1, h2, h3, h4, h5, h6 {
   isolation: isolate;
 }
 
+html, body {
+  height: 100vh;
+  background-color: rgb(225, 231, 232);
+}
+
 .container {
-    height: 100vh;
+    height: 100%;
     display: grid;
     grid-template-columns: 1fr 4fr;
     grid-template-rows: 1fr 4fr;
 }
 
 .sidebar {
-    background-color: rgb(106, 136, 225);
+    background-color: rgb(63, 159, 233);
+    color: brick;
+    font-weight: 700;
+    font-size: large;
     grid-row: 1/-1;
     grid-column: 1/2;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -64,27 +72,33 @@ h1, h2, h3, h4, h5, h6 {
 
 .header {
     display: grid;
+    background-color: white;
     grid-template-columns: 4fr 2fr;
     grid-template-rows: 1fr 1fr;
-    padding: 25px 50px;
+    padding: 15px 50px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .searchbar {
     display: grid;
-    grid-template-columns: 1fr 14fr;
+    grid-template-columns: max-content 14fr;
     justify-content: start;
     align-items: start;
+    gap: 15px;
 }
 
 .searchbar input{
+    border: none;
+    padding-left: 10px;
     width: 80%;
+    border-radius: 15px;
+    border-color: rgb(7, 46, 81);
+    background-color: rgb(244, 235, 235);
 }
-/* .searchbar img {
+.searchbar img {
     position: relative;
-    top: 2px;
-    display: inline;
-} */
+    top: 4px;
+}
 
 .profile {
     display: grid;
@@ -108,9 +122,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .profile-details {
   display: grid;
-  grid-template-columns: 1fr 7fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: max-content 1fr;
+  grid-template-rows: 1fr;
   align-items: end;
+  column-gap: 20px;
 }
 
 .profile-details .profile-details-logo {
@@ -125,13 +140,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .header-buttons {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  justify-content: start;
-  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  justify-content: center;
+  align-items: end;
+  padding-bottom: 10px;
 }
 
 .my-btn {
-  width: 80px;
+  width: 90px;
   border-radius: 10px;
 }
 
@@ -139,15 +155,20 @@ h1, h2, h3, h4, h5, h6 {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: max-content max-content max-content;
-  gap: 75px;
-  padding-top: 25px;
+  gap: 45px;
+  padding-top: 15px;
   padding-left: 20px;
 }
 
 .sidebar .dashboard {
   display: grid;
   grid-template-columns: max-content max-content;
-  gap: 20px;
+  gap: 4px !important;
+}
+
+.dashboard img {
+    position: relative;
+    left: -7px;
 }
 
 .sidebar .dashboard span {
@@ -157,7 +178,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .sidebar div {
   display: grid;
-  gap: 20px;
+  gap: 10px;
 }
 
 
@@ -167,4 +188,100 @@ h1, h2, h3, h4, h5, h6 {
   gap: 20px;
 }
 
+article {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  row-gap: 10px;
+  column-gap: 25px;
+  margin-top: 25px;
+  margin-left: 20px;
+  margin-right: 25px;
+  margin-bottom: 30px;
+}
+
+article .projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  
+  gap: 1rem;
+}
+
+span.title {
+  font-weight: 700;
+  font-size: larger;
+}
+
+span.announcement {
+  font-weight: 700;
+  font-size: larger;
+}
+
+.projects > div {
+  background-color: white;
+  padding: 20px;
+  border-left: 6px solid orange;
+  border-radius: 4px;
+  display: grid;
+}
+
+.projects > div > .btns {
+  display: grid;
+  grid-template-columns: max-content max-content max-content;
+  gap: 15px;
+  justify-content: end;
+  align-items: end;
+}
+
+.articles-side {
+  display: grid;
+  grid-template-rows: 1fr max-content 1fr;
+}
+
+.articles-side > div {
+  background-color: white;
+  padding: 30px;
+  padding-top: 5px;
+  padding-bottom: 0px;
+  border-radius: 4px;
+}
+
+.articles-side > div:first-child {
+  margin-bottom: 30px;
+}
+span.trending-title {
+  font-weight: 700;
+  font-size: larger;
+  margin-bottom: 10px;
+}
+
+.announcements > div {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.trending {
+  display: grid;
+  grid-template-rows: repeat(auto-fill, minmax(70px, 1fr));
+  padding-top: 20px !important;
+  padding-left: 20px !important;
+
+}
+
+.trending > .profile {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+}
+
+.trending > .profile > .profile-name {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.header-buttons button {
+  border: none;
+  padding: 3px;
+  background-color: rgb(187, 146, 226);
+  color: white;
+  font-weight: 700;
+}
 
